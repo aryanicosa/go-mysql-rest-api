@@ -8,3 +8,10 @@ Pre-requisite :
 1. Install MySQL server on machine
 2. Install go sql driver package        : `go get -u github.com/go-sql-driver/mysql`
 3. Install Gorilla Mux route package    : `go get -u github.com/gorilla/mux`
+
+Demo (using PostMan) :
+1. Get All User records - OK
+![alt text](https://github.com/aryanicosa/go-mysql-rest-api/blob/main/doc/Correct_Basic_Auth.PNG)
+
+2. Get a User records - Unauthorized
+![alt text](https://github.com/aryanicosa/go-mysql-rest-api/blob/main/doc/Unauthorized_basic_auth.PNG)
