@@ -17,11 +17,12 @@ func main() {
 
 	router := mux.NewRouter()
 
-	router.HandleFunc("/users", controller.MiddlewareAuth(controller.GetAllUser(db)))
-	router.HandleFunc("/user", controller.MiddlewareAuth(controller.CreateUser(db))).Methods("POST")
-	router.HandleFunc("/user/{userId}", controller.MiddlewareAuth(controller.GetUser(db))).Methods("GET")
-	router.HandleFunc("/user/{userId}", controller.MiddlewareAuth(controller.DeleteUser(db))).Methods("DELETE")
-	router.HandleFunc("/user/{userId}", controller.MiddlewareAuth(controller.UpdateUser(db))).Methods("PUT")
+	router.HandleFunc("/user/create", controller.MiddlewareBasicAuth(controller.CreateUser(db))).Methods("POST")
+	router.HandleFunc("/user/login", controller.MiddlewareBasicAuth(controller.Login(db))).Methods("POST")
+	router.HandleFunc("/users", controller.MiddlewareBearerAuth(controller.GetAllUser(db))).Methods("GET")
+	router.HandleFunc("/user/{userId}", controller.MiddlewareBasicAuth(controller.GetUser(db))).Methods("GET")
+	router.HandleFunc("/user/{userId}", controller.MiddlewareBasicAuth(controller.DeleteUser(db))).Methods("DELETE")
+	router.HandleFunc("/user/{userId}", controller.MiddlewareBasicAuth(controller.UpdateUser(db))).Methods("PUT")
 
 	http.Handle("/", router)
 
