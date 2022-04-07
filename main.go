@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
+	"net/http"
+
 	"github.com/aryanicosa/go-mysql-rest-api/config"
 	"github.com/aryanicosa/go-mysql-rest-api/controller"
-	"net/http"
 
 	"github.com/gorilla/mux"
 )
