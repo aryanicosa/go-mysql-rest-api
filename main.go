@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"go-rest-api/config"
-	"go-rest-api/controller"
+	"github.com/aryanicosa/go-mysql-rest-api/config"
+	"github.com/aryanicosa/go-mysql-rest-api/controller"
 	"net/http"
 
 	"github.com/gorilla/mux"

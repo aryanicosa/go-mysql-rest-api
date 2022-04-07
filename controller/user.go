@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"go-rest-api/model"
+	"github.com/aryanicosa/go-mysql-rest-api/model"
 	"net/http"
 	"strconv"
 	"strings"
