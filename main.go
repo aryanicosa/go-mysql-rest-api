@@ -13,6 +13,7 @@ import (
 func main() {
 	db, err := config.ConnectDB()
 	if err != nil {
+		fmt.Println("error here")
 		panic(err)
 	}
 
@@ -27,7 +28,7 @@ func main() {
 
 	http.Handle("/", router)
 
-	address := "localhost:9000"
+	address := "localhost:8080"
 	fmt.Printf("Server started at %s", address)
 
 	http.ListenAndServe(address, router)
